@@ -11,12 +11,8 @@ class DummyTopicModel:
         ]
 
     def predict(self, text: str):
-        """
-        Simuliert eine Multi-Label Klassifikation.
-        Gibt Wahrscheinlichkeiten für jedes Topic zurück.
-        """
-        # Dirichlet-Verteilung erzeugt Wahrscheinlichkeiten, die sich zu 1 summieren
-        probabilities = np.random.dirichlet(np.ones(len(self.topics)), size=1)[0]
+    	probabilities = np.random.dirichlet(np.ones(len(self.topics)), size=1)[0]
+    	# numpy.float64 zu Python float konvertieren und auf 4 Nachkommastellen runden
+    	probabilities = [round(float(p), 4) for p in probabilities]
+    	return dict(zip(self.topics, probabilities))
 
-        # Rückgabe als Dictionary
-        return dict(zip(self.topics, probabilities))
