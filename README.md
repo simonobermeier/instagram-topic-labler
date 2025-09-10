@@ -33,7 +33,7 @@ Dieses Projekt demonstriert eine **Dummy-Implementierung eines Microservices**, 
 - **Daten & Preprocessing**: Azure Blob Storage + ML Workspace  
 - **Modelltraining / Topic Discovery**: Azure ML Workspace  
 - **Model Registry**: Versionierung der trainierten Modelle  
-- **Online Serving / API**: Azure Container Instance / App Service / AKS  
+- **Online Serving / API**: Azure Container Instance
 - **Client**: Sendet POST-Requests, erhält JSON Response  
 
 **Skizze**:
