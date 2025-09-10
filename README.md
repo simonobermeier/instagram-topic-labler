@@ -44,6 +44,7 @@ Dieses Projekt demonstriert eine **Dummy-Implementierung eines Microservices**, 
 ## 🗂 Projektdateien:
 
 model.py       # Dummy-Modell, gibt zufällige Wahrscheinlichkeiten für Topics zurück  
+test_model.py # Testen des Modells mit Beispielsatz
 main.py        # REST API: FastAPI-Endpunkt, ruft das Dummy-Modell auf  
 Architekturskizze.png   # Architekturdiagramm  
 Sequenzdiagramm.png       # Sequenzdiagramm (Client ↔ API ↔ Modell)  
