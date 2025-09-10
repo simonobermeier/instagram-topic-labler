@@ -17,9 +17,12 @@ Dieses Projekt demonstriert eine **Dummy-Implementierung eines Microservices**, 
   - Embeddings → Cluster → Topic-Vorschläge  
   - Human-in-the-loop: Auswahl sinnvoller Topics  
 
+- **Klassifikationsmodell (Model Training)**:  
+  - Training eines Modells auf Basis der final ausgewählten Topics  
+
 - **Klassifikation neuer Posts (online, Microservice)**:  
   - REST API erhält Text-Input  
-  - Dummy Topic Model generiert zufällige Wahrscheinlichkeiten  
+  - (Dummy) Topic Model klassifiziert (zufällige) Wahrscheinlichkeiten  
   - API gibt JSON-Response mit Topic-Wahrscheinlichkeiten zurück  
 
 
@@ -38,40 +41,40 @@ Dieses Projekt demonstriert eine **Dummy-Implementierung eines Microservices**, 
 
 
 
-## 🗂 Projektstruktur:
+## 🗂 Projektdateien:
 
-instagram-topic-labler/
-│
-├── app/
-│   ├── __init__.py
-│   ├── model.py       # Dummy-Modell, gibt zufällige Wahrscheinlichkeiten für Topics zurück  
-│   └── main.py        # REST API: FastAPI-Endpunkt, ruft das Dummy-Modell auf 
-│
-├── docs/
-│   ├── Architekturskizze.png   # Architekturdiagramm
-│   └── Sequenzdiagramm.png       # Sequenzdiagramm (Client ↔ API ↔ Modell)
-│
-├── requirements.txt       # FastAPI, Uvicorn, NumPy 
-└── README.md              # Projektbeschreibung & Methodik
+model.py       # Dummy-Modell, gibt zufällige Wahrscheinlichkeiten für Topics zurück  
+main.py        # REST API: FastAPI-Endpunkt, ruft das Dummy-Modell auf 
+Architekturskizze.png   # Architekturdiagramm
+Sequenzdiagramm.png       # Sequenzdiagramm (Client ↔ API ↔ Modell)
+requirements.txt       # FastAPI, Uvicorn, NumPy 
+README.md              # Projektbeschreibung & Methodik
 
 
----
+
 
 ## How to Run
 
 1. Virtuelle Umgebung erstellen und aktivieren:
 
+```Bash
 cd C:\Users\Simon\instagram-topic-labler #Switch in Projektordner
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 py -m venv venv
 .\venv\Scripts\activate  # Windows PowerShell
+```
 
 2. Dependcies installieren
+```Bash
 pip install -r requirements.txt
+```
 
 3. Rest API starten
+```Bash
 uvicorn app.main:app --reload
+```
 
 4. API testen
+```Bash
 Zugriff auf Swagger UI: http://127.0.0.1:8000/docs
-
+```
